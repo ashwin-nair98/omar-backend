@@ -1,0 +1,13 @@
+{
+    "url": "https://gateway.watsonplatform.net/assistant/api",
+    "username": "b0bb222d-0320-4269-8e43-5385f3b436cb",
+    "password": "BgdAh4l5PTcS",
+    "workspace_id": "d2591dad-04d9-4228-9946-54c98bc9f8c5",
+    "zomato": {
+      "key": "7900e614d34c6e690f23bcd121a6cea1",
+      "base_url": "https://developers.zomato.com/api/v2.1/",
+      
+      "locations": "locations?query=<location>",
+      "location_details": "location_details?entity_id=<entity_id>&entity_type=<entity_type>"
+    }
+}
