@@ -1,0 +1,39 @@
+{
+    "restaurants": [
+        {
+            "id": "kfc-1",
+            "name": "KFC",
+            "description": "Finger lickin good chicken",
+            "address": "Block-7, Dubai Knowledge Village",
+            "cuisine": "Fast-food",
+            "working-hours": {
+                "open": "10:00",
+                "close": "17:00"
+            }
+        },
+        {
+            "id": "kamat-1",
+            "name": "Kaamat",
+            "description": "Authentic vegetarian food",
+            "address": "Dell Bldg no. 3, Dubai Internet City" ,
+            "vegetarian": true,
+            "cuisine": "Indian",
+            "working-hours": {
+                "open": "8:00",
+                "close": "22:00"
+            }
+        },
+        {
+            "id": "taqado-1",
+            "name": "Taqado Mexican Kitchen",
+            "description": "Burritos and Tacos",
+            "address": "Ground Floor, Building 7, Dubai Media City",
+            "vegetarian": false,
+            "cuisine": "Mexican",
+            "working-hours": {
+                "open": "08:00",
+                "close": "23:59"
+            }
+        }
+    ]
+}

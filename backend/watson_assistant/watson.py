@@ -1,4 +1,7 @@
-
+import json
+import operator
+from pprint import pprint
+from watson_developer_cloud import AssistantV1
 
 class WatsonAPI():
 
@@ -14,7 +17,7 @@ class WatsonAPI():
     
     
     
-    def get_response(self, dialog=None, context={}):
+    def get_response(self, dialog, context):
         """
         Calls Watson API and returns the response.
         """

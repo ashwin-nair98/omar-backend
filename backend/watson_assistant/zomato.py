@@ -1,7 +1,7 @@
 import json
 from pprint import pprint
 import requests
-from models import Restaurant
+# from models import Restaurant
 
         
 
@@ -9,6 +9,8 @@ class ZomatoAPI():
     def __init__(self):
         with open('config.json') as f:
             self.config = json.load(f)['zomato']
+        with open('data.json') as f:
+            self.data = json.load(f)
     
     def location_details(self, entity_id, entity_type):
         # Build URL base and headers
@@ -59,7 +61,7 @@ class ZomatoAPI():
 
         if(not location_entity):
             return "I'm sorry, I can only find locations in Dubai. Exiting now."
-            exit(0)
+            # exit(0)
         response = dict()
         response['entity_id'] = location_entity['entity_id']
         response['entity_name'] = location_entity['title']
@@ -71,3 +73,22 @@ class ZomatoAPI():
         location = self.locations(location)
         rests = self.location_details(location['entity_id'], location['entity_type'])
         return rests
+
+    def find_restaurant_by_cuisine(self, params, context):
+        existing = None
+        if('restaurant' in context):
+            exisiting = context['restaurant']
+        for rest in self.data['restaurants']:
+            if(rest['cuisine'] == params['cuisine']):
+                restaurant = {
+                    'name': rest['name'],
+                    'address': rest['address']
+                }
+                if(existing != None and restaurant == existing):
+                    continue
+                return restaurant
+        restaurant = {
+            'found': 'not found'
+        }
+        return restaurant
+        
