@@ -2,14 +2,11 @@
 $(document).ready(function(){
     var context = {}
     var initializeData = {}
-    //Hide chatbox and input till location loads
-    document.getElementById("chatbox").style.display = "none";
-    document.getElementById("userInput").style.display = "none";
 
     //find the location of the user
     if (navigator.geolocation) {
         navigator.geolocation.getCurrentPosition(appendPosition);
-    } else { 
+    } else {
         initializeData = {
             navigator : 'NOT_FOUND'
         };
@@ -35,9 +32,8 @@ $(document).ready(function(){
             console.log(ret_data)
             var initialHtml = '<div class="card text-white bg-danger mb-3" style="max-width: 40%;margin-left:0; margin-right:auto;"><p class="container card-text"><span>' + ret_data.text + '</span></p></div>';
             // Hide loader and show chat
-            document.getElementById("loaderContainer").style.display = "none";            
-            document.getElementById("chatbox").style.display = "block";
-            document.getElementById("userInput").style.display = "block";
+            document.getElementById("loaderContainer").style.display = "none";
+            document.getElementById("chat").style.display = "block";
             $("#chatbox").append(initialHtml);
         })
     }
@@ -70,10 +66,10 @@ $(document).ready(function(){
         }
         else {
             var botHtml = '<div class="card text-white bg-danger mb-3" style="max-width: 40%; margin-left:0; margin-right:auto;"><p class="container card-ext"><span>' + 'Looks like something went wrong' + '</span></p></div>';
-        }              
+        }
         $("#chatbox").append(botHtml);
-        console.log("After:", context);    
-        
+        console.log("After:", context);
+
         document.getElementById('userInput').scrollIntoView({block: 'start', behavior: 'smooth'});
         });
     }
@@ -87,5 +83,5 @@ $(document).ready(function(){
     $("#buttonInput").click(function() {
     getBotResponse();
     })
-    
+
 });

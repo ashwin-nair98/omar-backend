@@ -16,15 +16,17 @@
             <div id="loader"> </div>
             <div id="loaderText">Gathering info about your location</div>
         </div>
-
-        <div id="chatbox" class="animate-bottom">
+        <div id="chat" style="display:none;">
+          <div id="chatbox" class="animate-bottom">
+          </div>
+          <div id="userInput" class="animate-bottom">
+            <input id="textInput" type="text" class="form-control" name="msg" placeholder="Message">
+            <input id="buttonInput" type="submit" class="btn btn-primary btn-group-justified" value="Send">
+          </div>
         </div>
-        <div id="userInput" class="animate-bottom">
-          <input id="textInput" type="text" class="form-control" name="msg" placeholder="Message">
-          <input id="buttonInput" type="submit" class="btn btn-primary btn-group-justified" value="Send">
-        </div>
 
-        
+
+
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/js/bootstrap.min.js" integrity="sha384-o+RDsa0aLu++PJvFqy8fFScvbHFLtbvScb8AjopnFD+iEQ7wo/CG0xlczd+2O/em" crossorigin="anonymous"></script>
         <script src='/static/bot.js'></script>

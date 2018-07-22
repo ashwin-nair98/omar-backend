@@ -7,7 +7,6 @@ import os
 class WatsonAPI():
 
     def __init__(self):
-        print("Api initialized")
         self.assistant = AssistantV1(
             username = os.getenv('WATSON_USER'),
             password = os.getenv('WATSON_PASSWORD'),
@@ -24,5 +23,4 @@ class WatsonAPI():
                 'text': dialog
             },
             context=context)
-        print("Api returned")
         return response
