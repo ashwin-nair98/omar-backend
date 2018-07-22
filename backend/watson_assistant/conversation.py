@@ -1,32 +1,27 @@
 from .watson import WatsonAPI
-from .zomato import ZomatoAPI
+from .google import GoogleAPI
 from pprint import pprint
 
 class Conversation():
     def __init__(self):
         self.wapi = WatsonAPI()
-        self.zapi = ZomatoAPI()
+        self.gapi = GoogleAPI()
         pass
 
     def locate_restaurant(self, params, context, result):
-        # TODO: Implement actual zomato search, or build restaurant DB
-        restaurant_data = self.zapi.find_restaurant_by_cuisine(params, context)
+        restaurant_data = self.gapi.find_restaurant(context, params['cuisine'])
         context[result] = restaurant_data
         return context
 
     def find_route(self, params, context, result):
-        restaurant = None
-        if 'restaurant' in params:
-            restaurant = params['restaurant']
-        elif 'restaurant' in context:
-            restaurant = context['restaurant']
-        route = {
-            'time': '24 minutes',
-            'details': 'Get out.'
-        }
-        context[result] = route
+        response = self.gapi.find_route(context)
+        context[result] = response
         return context
 
+    def open_maps(self, params, context, result):
+        response = self.gapi.find_url(context)
+        context[result] = response
+        return context
 
     def exit_chat(self, params, context, result):
         context[result] = True
@@ -41,11 +36,13 @@ class Conversation():
             switcher_action = {
                 'locate_restaurant': self.locate_restaurant,
                 'find_route': self.find_route,
+                'open_maps': self.open_maps,
                 'exit_chat': self.exit_chat
             }
             switcher_result = {
                 'context.restaurant': 'restaurant',
                 'context.route': 'route',
+                'context.map': 'map',
                 'context.exit': 'exit'
             }
             action_function = switcher_action[action]

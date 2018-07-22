@@ -1,9 +1,6 @@
 from django.shortcuts import render
 from django.http import HttpResponse, JsonResponse
 from django.views.decorators.csrf import csrf_exempt
-from rest_framework.renderers import JSONRenderer
-from rest_framework.parsers import JSONParser
-from rest_framework.response import Response
 from .watson_assistant.conversation import Conversation
 from pprint import pprint
 
@@ -16,9 +13,7 @@ def get(request):
             context = request.POST['context']
         else:
             context = {}
-        # pprint(context)
         message= request.POST['msg']
-
         response_data = conversation.message(message, context)
         response_message = response_data['text']
         response_context = response_data['context']
@@ -33,6 +28,12 @@ def initialize(request):
         response_data = conversation.start()
         response_message = response_data['text']
         response_context = response_data['context']
+        if(request.GET['latitude'] and request.GET['longitude']):
+            lat = request.GET['latitude']
+            lon = request.GET['longitude']
+            response_context['latlong'] = str(lat) + ',' + str(lon)
+        elif request.GET['navigator'] is 'NOT_FOUND':
+            response_context['latlong'] = '25.095863,55.157950'
         return JsonResponse({
             'text': response_message,
             'context': response_context

@@ -12,9 +12,14 @@
 </head>
 <body>
     <div>
-        <div id="chatbox">
+        <div id="loaderContainer">
+            <div id="loader"> </div>
+            <div id="loaderText">Gathering info about your location</div>
         </div>
-        <div id="userInput">
+
+        <div id="chatbox" class="animate-bottom">
+        </div>
+        <div id="userInput" class="animate-bottom">
           <input id="textInput" type="text" class="form-control" name="msg" placeholder="Message">
           <input id="buttonInput" type="submit" class="btn btn-primary btn-group-justified" value="Send">
         </div>
