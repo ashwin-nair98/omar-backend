@@ -10,9 +10,12 @@ chardet==3.0.4
 constantly==15.1.0
 cryptography==2.2.2
 decorator==4.3.0
+dj-database-url==0.5.0
 Django==2.0.6
+django-heroku==0.3.1
 djangorestframework==3.8.2
 googlemaps==3.0.2
+gunicorn==19.9.0
 hyperlink==18.0.0
 idna==2.7
 incremental==17.5.0
@@ -27,6 +30,7 @@ parso==0.3.1
 pexpect==4.6.0
 pickleshare==0.7.4
 prompt-toolkit==1.0.15
+psycopg2==2.7.5
 ptyprocess==0.6.0
 pyasn1==0.4.3
 pyasn1-modules==0.2.2
@@ -50,4 +54,5 @@ txaio==2.10.0
 urllib3==1.23
 watson-developer-cloud==1.5.0
 wcwidth==0.1.7
+whitenoise==3.3.1
 zope.interface==4.5.0

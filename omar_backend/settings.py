@@ -25,7 +25,7 @@ SECRET_KEY = '0em)yr5&a5fft0=do4t9@d+21(8hfc5f@m_o7%g=@=t3*br2#x'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['127.0.0.1', '.pythonanywhere.com']
+ALLOWED_HOSTS = ['127.0.0.1', '0.0.0.0', 'omar-chatbot.herokuapp.com']
 
 
 # Application definition
@@ -120,4 +120,3 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
-
