@@ -26,7 +26,7 @@ class Conversation():
     def exit_chat(self, params, context, result):
         context[result] = True
         return context
-    
+
     def message(self, message, context):
         wapi_response = self.wapi.get_response(message, context)
         if('actions' in wapi_response):
@@ -55,7 +55,7 @@ class Conversation():
                 }
             wapi_response = self.wapi.get_response(None, watson_context)
         if('output' in wapi_response and 'context' in wapi_response):
-            pprint(wapi_response)
+            # pprint(wapi_response)
             text = wapi_response['output']['text'][0]
             context = wapi_response['context']
             return {

@@ -6,8 +6,11 @@
     "zomato": {
       "key": "7900e614d34c6e690f23bcd121a6cea1",
       "base_url": "https://developers.zomato.com/api/v2.1/",
-      
+
       "locations": "locations?query=<location>",
       "location_details": "location_details?entity_id=<entity_id>&entity_type=<entity_type>"
+    },
+    "google": {
+      "key": "AIzaSyDjdUOOlpdeo1-qlIMQ4xRfzABELXZVlfs"
     }
 }
