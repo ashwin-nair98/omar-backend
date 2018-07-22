@@ -21,7 +21,7 @@ def get(request):
             'text': response_message,
             'context': response_context
             })
-
+@csrf_exempt
 def initialize(request):
     if request.method == 'GET':
         conversation = Conversation()

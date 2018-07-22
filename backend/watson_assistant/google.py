@@ -1,13 +1,13 @@
 import googlemaps
 from datetime import datetime
 import json
+import os
 
 class GoogleAPI():
     def __init__(self):
-        with open('config.json') as f:
-            self.key = json.load(f)['google']['key']
-            self.gmaps = googlemaps.Client(key=self.key)
-    
+        self.key = os.getenv('GOOGLE_KEY')
+        self.gmaps = googlemaps.Client(key=self.key)
+
     def find_restaurant(self, context, cuisine):
         query = cuisine + ' restaurant'
         location = 'point:' + context['latlong']
