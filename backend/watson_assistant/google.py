@@ -50,3 +50,6 @@ class GoogleAPI():
         return {
             'link': link
         }
+
+    def convert_to_arabic(self, text):
+        pass

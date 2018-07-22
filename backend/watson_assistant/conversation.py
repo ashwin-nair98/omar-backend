@@ -82,3 +82,7 @@ class Conversation():
                 'text': 'Something went wrong. Please reload the page and try again.',
                 'context': {}
             }
+
+    def convert_to_arabic(self, response):
+        response['text'] = self.gapi.convert_to_arabic(response['text'])
+        return response

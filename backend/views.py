@@ -38,3 +38,16 @@ def initialize(request):
             'text': response_message,
             'context': response_context
             })
+def arabic_get(request):
+    if request.method == 'GET':
+        res = get(request)
+        conversation = Conversation()
+        res = conversation.convert_to_arabic(res)
+        return JsonResponse(res)
+
+def arabic_initialize(request):
+    if request.method == 'GET':
+        res = initialize(request)
+        conversation = Conversation()
+        res = conversation.convert_to_arabic(res)
+        return JsonResponse(res)
