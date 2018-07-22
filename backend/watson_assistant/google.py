@@ -41,7 +41,7 @@ class GoogleAPI():
     def find_url(self, context):
         base_url = 'https://www.google.com/maps/dir/?api=1&'
         static_url = 'https://maps.googleapis.com/maps/api/staticmap?'
-        static_url += 'center=&zoom=13&scale=1&size=150x100&maptype=roadmap&key=' + self.key + '&format=png&visual_refresh=true'
+        static_url += 'center=&zoom=13&scale=1&size=150x100&maptype=roadmap&key=' + os.getenv('GOOGLE_STATIC_KEY') + '&format=png&visual_refresh=true'
         static_url += '&markers=size:mid|color:0x10ff4a|label:0|' + context['restaurant']['latlong']
         origin = 'origin=' + context['latlong']
         destination = 'destination=' + context['restaurant']['latlong']
