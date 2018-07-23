@@ -6,8 +6,7 @@ from pprint import pprint
 
 class GoogleAPI():
     def __init__(self):
-        self.key = os.getenv('GOOGLE_KEY')
-        self.gmaps = googlemaps.Client(key=self.key)
+        self.gmaps = googlemaps.Client(key=os.getenv('GOOGLE_KEY'))
 
     def find_restaurant(self, context, cuisine):
 
@@ -121,6 +120,3 @@ class GoogleAPI():
         return {
             'link': link
         }
-
-    def convert_to_arabic(self, text):
-        pass
