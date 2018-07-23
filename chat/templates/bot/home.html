@@ -1,15 +1,73 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="shortcut icon" type="image/png" href="/static/favicon.ico"/>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css" integrity="sha384-Smlep5jCw/wG7hdkwQ/Z5nLIefveQRIY9nfy6xoR1uRYBtpZgI6339F5dgvm/e9B" crossorigin="anonymous">
-    <link rel="stylesheet" type="text/css" href="/static/style_arabic.css">
-    <title> Omar | Home </title>
-  </head>
-  <body>
+<html lang="en">
+<head>
+  <title>Omar</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="shortcut icon" type="image/png" href="/static/favicon_final.png"/>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="/static/style_home.css">
+</head>
+<body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="60">
 
-  </body>
+<nav class="navbar navbar-default navbar-fixed-top">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+      <a class="navbar-brand" href="#myPage">_OMAR</a></div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="#about">ABOUT</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<div class="jumbotron text-center">
+  <h1>Omar</h1><p>BETA</p>
+  <p>The chatbot for your daily apetite.</p> 
+  
+</div>
+
+<!-- Container (About Section) -->
+<div id="about" class="container-fluid">
+  <div class="row">
+    <div class="col-sm-8">
+      <h2>About</h2><br>
+      <h4>Omar is a chatbot built with the intention of providing users with natural language converstaions about restaurant searches.</h4><br>
+      <p>Want to search for your favourite cuisine? Choose your language, allow access to your location and get started.</p>
+      <div class="container">
+      	<div class="row">
+   		  <div class="col col-md-3">
+           <a href="{% url 'interface_english' %}">
+              <button class="btn btn-default btn-lg lang">English</button>
+           </a>
+      			
+      	</div>
+		  <div class="col col-md-3">
+          <a href="{% url 'interface_arabic' %}">
+            <button class="btn btn-danger btn-lg lang">عربى</button>
+          </a>
+			</div>
+      	</div>
+      </div>
+    </div>
+    <div class="col-sm-4">
+     	<img src="/static/screenshot.png" class="screenshot" alt="">
+    </div>
+  </div>
+</div>
+
+
+<script src="/static/home.js"></script>
+</body>
 </html>
+
