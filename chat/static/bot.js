@@ -34,12 +34,14 @@ $(document).ready(function(){
             // Hide loader and show chat
             document.getElementById("loaderContainer").style.display = "none";
             document.getElementById("chat").style.display = "block";
+
             $("#chatbox").append(initialHtml);
         })
     }
 
     // Bot response: Triggered each time a user sends a message
     function getBotResponse() {
+        document.getElementById("indicator").style.display = "block";
         var rawText = $("#textInput").val();
         var userHtml = '<div class="card text-white bg-primary mb-3" style="max-width: 40%;margin-left:auto; margin-right:0;"><p class="container card-text"><span>' + rawText + '</span></p></div>';
         $("#textInput").val("");
@@ -61,16 +63,30 @@ $(document).ready(function(){
             }
         }
         if(data.text)
-        {   var botHtml ='<div class="card text-white bg-danger mb-3" style="max-width: 40%;margin-left:0; margin-right:auto;"><p class="container card-text"><span>' + data.text + '</span></p></div>';
-            context = data.context;
+        {   console.log(data.text)
+            if(data.text.length < 2) {
+                var botHtml ='<div class="card text-white bg-danger mb-3" style="max-width: 40%;margin-left:0; margin-right:auto;"><p class="container card-text"><span>' + data.text + '</span></p></div>';
+                document.getElementById("indicator").style.display = "none";
+                $("#chatbox").append(botHtml);
+            }
+            else {
+                var botHtml ='<div class="card text-white bg-danger mb-3" style="max-width: 40%;margin-left:0; margin-right:auto;"><p class="container card-text"><span>' + data.text[0] + '</span></p></div>';
+                $("#chatbox").append(botHtml);
+                setTimeout(function(){
+                    botHtml ='<div class="card text-white bg-danger mb-3" style="max-width: 40%;margin-left:0; margin-right:auto;"><p class="container card-text"><span>' + data.text[1] + '</span></p></div>';
+                    document.getElementById("indicator").style.display = "none";
+                    $("#chatbox").append(botHtml);
+                }, 1000);
+            }
         }
         else {
-            var botHtml = '<div class="card text-white bg-danger mb-3" style="max-width: 40%; margin-left:0; margin-right:auto;"><p class="container card-ext"><span>' + 'Looks like something went wrong' + '</span></p></div>';
+            var botHtml = '<div class="card text-white bg-danger mb-3" style="max-width: 40%; margin-left:0; margin-right:auto;"><p class="container card-ext"><span>Looks like something went wrong</span></p></div>';
         }
-        $("#chatbox").append(botHtml);
+        context = data.context;
         console.log("After:", context);
 
         document.getElementById('userInput').scrollIntoView({block: 'start', behavior: 'smooth'});
+        
         });
     }
 

@@ -18,7 +18,7 @@ def get(request):
         response_message = response_data['text']
         response_context = response_data['context']
         return JsonResponse({
-            'text': response_message,
+            'text': response_message.split('^split'),
             'context': response_context
             })
 @csrf_exempt
@@ -52,7 +52,7 @@ def arabic_get(request):
         response_message = response_data['text']
         response_context = response_data['context']
         return JsonResponse({
-            'text': response_message,
+            'text': response_message.split("^سبلت"),
             'context': response_context
             })
 
