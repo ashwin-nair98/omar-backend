@@ -5,7 +5,7 @@ $(document).ready(function(){
 
     //find the location of the user
     if (navigator.geolocation) {
-        navigator.geolocation.getCurrentPosition(appendPosition);
+        navigator.geolocation.getCurrentPosition(appendPosition, options={ timeout: 10*1000});
     } else {
         initializeData = {
             navigator : 'NOT_FOUND'
