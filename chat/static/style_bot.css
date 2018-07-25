@@ -25,6 +25,10 @@ a {
     width: 40%;
     margin-top: 60px;
 }
+#chat {
+  display:none;
+  width:80%;
+}
 
 #userInput {
     margin-left: auto;
@@ -45,30 +49,6 @@ a {
     font-size: 17px;
 }
 
-.userText {
-    color: white;
-    font-size: 17px;
-    text-align: right;
-    line-height: 30px;
-}
-
-.userText span {
-    padding: 10px;
-    border-radius: 2px;
-}
-
-.botText {
-    color: white;
-    font-size: 17px;
-    text-align: left;
-    line-height: 30px;
-}
-
-.botText span {
-    padding: 10px;
-    border-radius: 2px;
-}
-
 #tidbit {
     position:absolute;
     bottom:0;
@@ -78,7 +58,7 @@ a {
 
 #loader {
     position: relative;
-    color: #43aeb4;
+    color: #da3749;
     font-size: 90px;
     text-indent: -9999em;
     overflow: hidden;
@@ -156,15 +136,13 @@ a {
       transform: rotate(360deg);
     }
   }
-
+  
 
 #loaderText {
     padding-top: 10px;
-    position: relative;
-    left:40%;
-
+    text-align: center;
 }
-
+  
 /* Safari */
 @-webkit-keyframes spin {
     0% { -webkit-transform: rotate(0deg); }
@@ -183,14 +161,14 @@ a {
     animation-name: animatebottom;
     animation-duration: 1s
 }
-
+  
 @-webkit-keyframes animatebottom {
-    from { bottom:-100px; opacity:0 }
+    from { bottom:-100px; opacity:0 } 
     to { bottom:0px; opacity:1 }
 }
-
-@keyframes animatebottom {
-    from{ bottom:-100px; opacity:0 }
+  
+@keyframes animatebottom { 
+    from{ bottom:-100px; opacity:0 } 
     to{ bottom:0; opacity:1 }
 }
 
@@ -199,22 +177,17 @@ a {
 }
 
 img {
-    width: 90%;
+    width: 80%;
+    position: center;
 }
 
-input[type='text']{
-text-align:right;
+#indicator {
+  margin-bottom: 60px;
 }
-
-input[type='text']:focus{
-text-align:left;
-}
-
 
 .spinner {
   margin: 0;
   width: 40px;
-  text-align: center;
 }
 
 .spinner > div {
@@ -260,3 +233,70 @@ text-align:left;
     transform: scale(1.0);
   }
 }
+
+#botText {
+  max-width: 40%;
+  margin-left:0; 
+  margin-right:auto;
+}
+
+
+#userText {
+  max-width: 40%;
+  margin-left:auto; 
+  margin-right:0;
+}
+
+@media screen and (max-width: 768px) and (min-width: 480px){
+  #botText {
+    max-width: 40%;
+    margin-left: 20%;
+  }
+
+  #userText {
+    max-width: 40%;
+    margin-right: 20%;
+  }
+  #chatbox {
+    width: 100%;
+  }
+  #userInput {
+    width: 60%;
+    margin-left: 20%;
+    margin-right: 20%;
+  }
+  #textInput {
+    max-width: 100%;
+  }
+  #buttonInput {
+    max-width: 100%;
+  }
+  
+}
+
+@media screen and (max-width: 480px) {
+  #botText {
+    max-width: 60%;
+    margin-left: 10%;
+  }
+
+  #userText {
+    max-width: 60%;
+    margin-right: 10%;
+  }
+  #chatbox {
+    width: 100%;
+  }
+  #userInput {
+    width: 80%;
+    margin-left: 10%;
+    margin-right: 10%;
+  }
+  #textInput {
+    max-width: 100%;
+  }
+  #buttonInput {
+    max-width: 100%;
+  }
+}
+
