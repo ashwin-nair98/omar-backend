@@ -123,5 +123,6 @@ USE_TZ = True
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
-# Comment the following line in dev
+# Comment the following lines in dev
 SECURE_SSL_REDIRECT = True
+SECURE_HSTS_SECONDS = 1
