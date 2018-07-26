@@ -114,7 +114,7 @@ class GoogleAPI():
         static_url += 'center=&zoom=13&scale=1&size=150x100&maptype=roadmap&key=' + os.getenv('GOOGLE_STATIC_KEY') + '&format=png&visual_refresh=true'
         static_url += '&markers=size:mid|color:0x10ff4a|label:0|' + context['restaurant']['latlong']
         origin = 'origin=' + context['latlong']
-        destination = 'destination=' + context['restaurant']['latlong']
+        destination = 'destination=' + context['restaurant']['name']
         url = base_url + origin + '&' + destination
         link = '<a target=_blank href="' + url + '"><img src="' + static_url + '"></a>'
         return {
