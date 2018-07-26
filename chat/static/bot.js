@@ -4,7 +4,7 @@ var initializeData = {}
 var i = 0;
 var txt = `Welcome.
 I am Omar. I can help you find good restaurants of a cuisine of choice. I can also tell you the ones that are closest to where you are now. And provide with the time and distance.
-Please help me improve my cognitive skills by talking to me. The more you talk, the better my service get.`;
+Please help me improve my cognitive skills by talking to me. The more you talk, the better my service gets.`;
 var speed = 50;
 
 function typeWriter() {
