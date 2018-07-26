@@ -21,7 +21,7 @@ function getLocation(){
     document.getElementById("permission").style.display = "none";
     document.getElementById("loaderContainer").style.display = "block";
     if (navigator.geolocation) {
-        navigator.geolocation.getCurrentPosition(appendPosition);
+        navigator.geolocation.getCurrentPosition(appendPosition, showError, {timeout: 500});
     } else {
         initializeData = {
             navigator : 'NOT_FOUND'
@@ -29,7 +29,13 @@ function getLocation(){
         initialize(initializeData);
     }
 }
-
+function handleError(error) {
+    var initializeData = {
+        latitude: "25.096167299999998",
+        longitude: "55.158005900000006"
+    };
+    initialize(initializeData)
+}
 
 
 // Appends location and requests for initial call
