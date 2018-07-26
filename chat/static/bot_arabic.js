@@ -21,7 +21,7 @@ function getLocation(){
     document.getElementById("permission").style.display = "none";
     document.getElementById("loaderContainer").style.display = "block";
     if (navigator.geolocation) {
-        navigator.geolocation.getCurrentPosition(appendPosition, showError, {timeout: 500});
+        navigator.geolocation.getCurrentPosition(appendPosition, showError);
     } else {
         initializeData = {
             navigator : 'NOT_FOUND'
