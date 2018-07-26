@@ -95,6 +95,7 @@ h4 {
 .navbar li a, .navbar .navbar-brand {
     color: #fff !important;
     font-size: 14px;
+    padding-bottom: 5px;
 }
 .navbar-nav li a:hover, .navbar-nav li.active a {
     color: #08478c !important;
